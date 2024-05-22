@@ -1,0 +1,13 @@
+.nav-link
+{
+    background-color: gray;
+    border-right: 1px solid ;
+    text-align: center;
+}
+header
+{
+
+    display: grid;
+    grid-template-columns: minmax(100px,20vw) repeat(7,minmax(60px,11vw));
+    grid-area: header;
+}

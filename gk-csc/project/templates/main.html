@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    {%block basestatic%}
+
+
+    <link href="{% static 'css/reset.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    {%endblock basestatic%}
+    {% block css %}
+    {%endblock css%}
+        
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block header %}
+
+<header>
+
+        <div  class="nav-link"><img id="111 "src="{% static 'src/Снимок.png'%}"></div>
+       <div class="nav-link"><a href="{% url 'flats_list'%}">ГК Кавказ Строй Континент</a></div>
+        
+       <div class="nav-link"> <a href="{%url 'about'%}">о нас</a></div>
+        <div class="nav-link"><a href="{%url 'contacts'%}">контакты</a></div>
+        <div class="nav-link"><a href="{%url 'sales'%}">акции</a></div>
+        <div class="nav-link"><a href="{%url 'news'%}">новости</a></div>
+
+</header>
+{% endblock %}
+{% block menu%}
+<aside class="menu">
+    <ul class="aside-ul">
+        <li class="sidebar-1l"> <a href="#1"> меню</a>
+            <ul>
+                <li class="sidebar-2l"><a href="{%url 'about'%}">о нас</a></li>
+                <li class="sidebar-2l"><a href="{%url 'contacts'%}">контакты</a></li>
+                <li class="sidebar-2l"><a href="{%url 'sales'%}">акции</a></li>
+                <li class="sidebar-2l"><a href="{%url 'news'%}">новости</a></li>
+            </ul>
+            
+        </li>
+        <li class="sidebar-1l"><a href="#2">квартиры</a>
+            <ul>
+                <li class="sidebar-2l"><a href="{% url '1_room_flats' %}">1-комнатные</a></li>
+                <li class="sidebar-2l"><a href="{% url '2_room_flats' %}">2-комнатные</a></li>
+                <li class="sidebar-2l"><a href="{% url '3_room_flats' %}">3-комнатные</a></li>
+                
+            </ul>
+
+        </li>
+        
+        <li class="sidebar-1l">информация для клиентов
+            <ul>
+                <li class="sidebar-2l"><a href="{%url 'about'%}">о нас</a></li>
+                <li class="sidebar-2l"><a href="{%url 'building_plan'%}">план застройки</a></li>
+                <li class="sidebar-2l"><a href="{%url 'credit_0'%}">рассрочка 0%</a></li>
+                <li class="sidebar-2l"><a href="{%url 'price_list'%}">прайс-лист</a></li>
+                <li class="sidebar-2l"><a href="{%url 'reviews'%}"> отзывы клиентов </a></li>
+
+            </ul>
+
+        </li>
+        <li class="sidebar-1l">дополнительная информация
+            <ul>
+                <li class="sidebar-2l"><a href="{%url 'faq'%}">вопрос-ответ</a></li>
+                <li class="sidebar-2l"><a href="{%url 'contacts'%}">контакты</a></li>
+                <li class="sidebar-2l"><a href="{%url 'credit_issues'%}">условия рассрочки</a></li>
+                <li class="sidebar-2l"><a href="{%url 'pay_ways'%}">способы оплаты</a></li>
+                <li class="sidebar-2l"><a href="{%url 'reverse_call'%}">обратная связь</a></li>
+                <li class="sidebar-2l"><a href="{%url 'law_inform'%}">юридическая информация</a></li>
+                <li class="sidebar-2l"><a href="{%url 'docs'%}">документы</a></li>
+            </ul>
+
+    </ul>
+</aside>
+{% endblock %}
+
+
+{% block main %}
+<main>
+
+{%block rooms%}
+    <section class="rooms-id">
+        <a href="{%url '1_room_flats'%}">1-комнатные</a>
+        <a href="{% url '2_room_flats'%}">2-комнатные</a>
+        <a href="{%url '3_room_flats'%}">3-комнатные</a>
+    </section>
+{% endblock rooms%}
+
+        <section class="flats">
+
+           {%block flats%}
+           {%if flats %}
+
+           
+{%for flat in flats%}
+
+
+            <section class="flat">
+
+
+<div class="liter">Литер: {{flat.house}} </div>
+
+<div class="square">Площадь: {{flat.square}} </div>
+<div class="rooms">комнаты: {{flat.rooms}} </div>
+<div class="price">Цена: {{flat.price}} </div>
+
+<div class="plan"><img src='{{ flat.plan.url}}'></div>
+
+
+
+                </section>
+{%endfor%}
+</section>
+{%else%}
+квартир нет
+            
+{%endif%}
+{%endblock flats%}
+{%block news%}
+<section class="news">
+    <h2>Новости</h2>
+     {%if news %}
+            {%for new in news%}
+            <div class="new">
+    <div class="new-title"><a href="{% url 'news' %}">{{new.title}}</a></div>
+    <div class="new-text">{{new.text|truncatewords:20}}</div>
+
+    <img src="{{new.img.url }}" alt="">
+    <div class="date">{{new.datetime}}</div>
+</div>
+           {% endfor%}
+           {% else%}
+            новостей нет!
+            {%endif%}
+</section>
+{%endblock%}
+
+
+
+        {%block main-menu%}
+    <section class="inside-menu">
+            <div class="inside-menu-div-1"><a href="{%url 'about'%}">о нас</a></div>
+    <div class="inside-menu-div-2"><a href="{%url 'building_plan'%}">план застройки</a></div>
+    <div class="inside-menu-div-3"><a href="{%url 'credit_0'%}">рассрочка 0%</a> </div>
+    <div class="inside-menu-div-4"><a href="{%url 'price_list'%}">прайс-лист</a> </div>
+    <div class="inside-menu-div-5"><a href="{%url 'reviews'%}"> отзывы клиентов </a></div>
+     </section>
+{%endblock%}
+
+
+    {%block advert%}
+        <section class="advert">
+            <h2>Рост в Цифрах</h2>
+            <div class="digit-raise-container">
+            <div class="digit-raise">   
+                2010 год: Братья Алан и Давид Хасановы основывают "Кавказ Строй Континент" в Ставрополе. В первом году компания начинает свою деятельность с 10 строящихся домов.
+            </div></div>
+            <div class="digit-raise-container"><div class="digit-raise">   
+                2012 год: Благодаря хорошей репутации и высокому качеству строительства, компания увеличивает объем проектов до 20 домов в год
+            </div></div>
+            <div class="digit-raise-container"><div class="digit-raise">   
+                2014 год: "Кавказ Строй Континент" расширяет свою деятельность за пределы Ставрополя, начиная строительство домов в прилегающих районах. Объем проектов достигает 30 домов в год.
+            </div></div>
+            <div class="digit-raise-container"><div class="digit-raise">   
+                2016 год: Компания внедряет инновационные строительные технологии, что позволяет ей увеличить производительность и начать строительство 40 домов ежегодно.
+            </div></div>
+            <div class="digit-raise-container"><div class="digit-raise">   
+                2018 год: "Кавказ Строй Континент" становится лидером на рынке строительства в регионе. Успешное партнерство с поставщиками материалов позволяет компании увеличить объем проектов до 50 домов в год.
+            </div></div>
+            <div class="digit-raise-container"><div class="digit-raise">   
+                2020 год: Компания расширяет свой штат сотрудников и открывает новые офисы в различных районах города. Объем проектов увеличивается до 60 домов в год
+            </div></div>
+            <div class="digit-raise-container"><div class="digit-raise">   
+                2022 год: "Кавказ Строй Континент" продолжает расти, становясь одной из самых крупных строительных компаний в регионе. Строительство 70 домов в год становится новым рекордом для компании
+            </div></div>
+            <div class="digit-raise-container"><div class="digit-raise">   
+                2022 год: "Кавказ Строй Континент" продолжает расти, становясь одной из самых крупных строительных компаний в регионе. Строительство 70 домов в год становится новым рекордом для компании
+            </div></div>
+
+
+        </section>
+{%endblock%}
+
+
+</main>
+{% endblock%}
+{% block footer%}
+<footer>
+    <div id="faq"><a href="{%url 'faq'%}">вопрос-ответ</a></div>
+    <div id="contacts-footer"><a href="{%url 'contacts'%}">контакты</a> </div>
+    <div id="credit-issues"><a href="{%url 'credit_issues'%}">условия рассрочки</a></div>
+    <div id="pay-ways"><a href="{%url 'pay_ways'%}">способы оплаты</a></div>
+    <div id="recall"><a href="{%url 'reverse_call'%}">обратная связь</a></div>
+    <div id="law-information"><a href="{%url 'law_inform'%}">юридическая информация</a></div>
+    <div id="docs"><a href="{%url 'docs'%}">документы</a></div>
+</footer>
+{%endblock %}
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+

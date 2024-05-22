@@ -1,0 +1,117 @@
+
+
+body{
+    background-color: blue;
+    width: 100vw;
+    font-size: 18px;
+    display: grid;
+    grid-template-columns: minmax(80px,20vw), repeat(7,minmax(60px,11vw));
+    grid-template-areas:
+    "header header header header header header header header"
+    "aside main main main main main main main"
+    "aside footer footer footer footer footer footer footer";
+
+}
+img{
+    width: 15vw;
+    height: 15vw;
+}
+
+
+aside
+{
+    padding-left: 8px;
+    grid-area: aside;
+    background-color: #fafccf;
+    color: #41413f;
+}
+aside a{
+    color: #41413f;
+}
+.sidebar-2l{
+    padding-left: 20px;
+    margin-top: 8px;
+}
+.sidebar-1l{
+   
+    margin-top: 8px;
+}
+
+
+
+
+
+main {
+
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-template-areas:
+   
+    "flats flats flats flats flats recall-form"
+    "inside-menu inside-menu inside-menu inside-menu inside-menu inside-menu"
+    "news-preview news-preview news-preview news-preview news-preview news-preview"
+    "advert advert advert advert advert advert"
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover
+{
+    text-decoration: underline;
+
+}
+.recall-form{
+    grid-area: recall-form;
+
+}
+.recall-name{
+    color: green;
+}
+.recall-phone{
+    color: green;
+}
+.recall-text{
+    color: green;
+}
+.flats
+{
+
+    padding: 20px;
+    margin: 20px;
+    grid-area: flats;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,15vw));
+    border: 6px double #f1eeb2;
+    background-color: green;
+
+}
+.flats img{
+    background-color: lightgray;
+    width: 150px;
+    height: 150px;
+}
+.flat{
+    text-align:justify;
+}
+
+
+
+
+
+.inside-menu{
+    grid-area: inside-menu;
+    display: grid;
+    grid-template-columns: repeat(5, 16vw);
+    text-align: center;
+}
+.news-preview
+{
+    grid-area: news-preview;
+}
+.advert
+{
+    grid-area: advert;
+}

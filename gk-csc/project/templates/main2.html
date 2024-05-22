@@ -1,0 +1,31 @@
+{% extends 'main.html'%}
+
+
+
+    {% block flats%}
+<main>
+<section class="flats">
+{%for flat in flats%}
+
+{% if flat.rooms.room == 2 %}
+
+             <section class="flat">
+
+
+<div class="liter">Литер: {{flat.house}} </div>
+
+<div class="square">Площадь: {{flat.square}} </div>
+<div class="rooms">комнаты: {{flat.rooms}} </div>
+<div class="price">Цена: {{flat.price}} </div>
+
+<div class="plan"><img src='{{ flat.plan.url}}'></div>
+
+
+
+                </section>
+{%endif%}
+{%endfor%}
+</section>
+
+{% endblock flats%}
+</main>

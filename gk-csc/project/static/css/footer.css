@@ -1,0 +1,7 @@
+footer
+{
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(60px, 11vw))
+
+}

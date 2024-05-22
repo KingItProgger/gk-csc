@@ -1,0 +1,28 @@
+{% extends 'main.html' %}
+<head>
+    {% load static%}
+    
+    {%block css%}
+    <link rel="stylesheet" href="{% static 'css/faqU.css'%}">
+    {%endblock css%}
+    
+</head>
+{% block main%}
+<main>
+    <div class="faq">
+        <div class="question">
+            <h3 >Как узнать цену на конкретную квартиру?</h3>
+            
+        </div>
+        
+        <div class="answer">
+            <p>
+                
+                Позвоните в отдел продаж
+            </p>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="{% static 'js/faq.js'%}"></script>
+</main>
+{% endblock%}

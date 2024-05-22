@@ -1,0 +1,36 @@
+main{
+	display: block;
+	line-height: 1.5;
+
+}
+.about-wrapper{
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	margin: 30px;
+	padding: 20px;
+	background-color: lightgray;
+	
+}
+.about-wrapper button{
+	height: 20px;
+	width: 50px;
+
+}
+
+.about{
+	display: flex;
+	width: 80%;
+	height: 100%;
+	text-align: justify;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+img{
+	width: 500px;
+	height: 380px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+
+}
