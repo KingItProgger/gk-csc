@@ -6,7 +6,7 @@
 
 
     <link href="{% static 'css/reset.css' %}" rel="stylesheet" />
-    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/styl.css' %}" rel="stylesheet" />
     {%endblock basestatic%}
     {% block css %}
     {%endblock css%}
@@ -42,7 +42,7 @@
             </ul>
             
         </li>
-        <li class="sidebar-1l"><a href="#2">квартиры</a>
+        <li class="sidebar-1l"><a href="{% url 'flats_list'%}">квартиры</a>
             <ul>
                 <li class="sidebar-2l"><a href="{% url '1_room_flats' %}">1-комнатные</a></li>
                 <li class="sidebar-2l"><a href="{% url '2_room_flats' %}">2-комнатные</a></li>

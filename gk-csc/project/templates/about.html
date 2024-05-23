@@ -2,14 +2,14 @@
 
 {% load static%}
  {% block css %}
- <link rel="stylesheet" type="text/css" href="{% static 'css/about.css'%}">
+ <link rel="stylesheet" type="text/css" href="{% static 'css/aboutu.css'%}">
     {%endblock css%}
 
 {% block main%}
 
 <main>
     <section   id="about-wrapper" class="about-wrapper">
-        <button onclick="backward(1)"></button>
+        <button onclick="backward(1)"><img src="../static/src/back.jpg" alt="" id="bacw"></button>
         <div class="about">
     <p>
     В самом начале своего пути "Кавказ Строй Континент" была маленькой семейной компанией в Ставрополе, основанной братьями Аланом и Давидом Хасановыми. Они унаследовали любовь к строительству от своего отца, который был опытным мастером-строителем.</p>
@@ -17,7 +17,7 @@
 </div>
 
 
-<button onclick="forward(1)" ></button>
+<button onclick="forward(1)" ><img src="../static/src/forw.jpg" alt="" id="forw"></button>
 
     </section>
     <script type="text/javascript" src="{% static 'js/aboutu.js'%}"></script>

@@ -1,0 +1,20 @@
+{%extends "main.html"%}
+
+{% block main %}
+<main>
+<section class="news">
+
+
+
+            <div class="new">
+    <div class="new-title"><a href="{% url 'news' %}">{{new.title}}</a></div>
+    <div class="new-text">{{new.text|truncatewords:20}}</div>
+
+    <img src="{{new.img.url }}" alt="">
+    <div class="date">{{new.datetime}}</div>
+</div>
+
+
+</section>
+</main>
+{% endblock main %}

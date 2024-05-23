@@ -6,7 +6,7 @@ urlpatterns=[
     path('1-room',Flats_1_List.as_view(),name='1_room_flats'),
     path('2-room',Flats_2_List.as_view(),name='2_room_flats'),
     path('3-room',Flats_3_List.as_view(),name='3_room_flats'),
-
+    path('news/<int:pk>',NewsDetail.as_view()),
 
 
     path('news/',NewsList.as_view(),name='news'),

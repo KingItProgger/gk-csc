@@ -6,8 +6,9 @@
     <h2>Новости</h2>
      {%if news %}
             {%for new in news%}
+    
             <div class="new">
-    <div class="new-title"><a href="{% url 'news' %}">{{new.title}}</a></div>
+    <div class="new-title"><a href="/news/{{new.pk}}">{{new.title}}</a></div>
     <div class="new-text">{{new.text}}</div>
 
     <img src="{{new.img.url }}" alt="">
